@@ -1,4 +1,9 @@
-﻿namespace Store.Tests.Entities
+﻿using Store.Domain.Entites;
+using Store.Domain.Enums;
+
+
+
+namespace Store.Tests.Entities
 {
     [TestClass]
     public class OrderTests
@@ -7,6 +12,11 @@
         [TestCategory("Domain")]
         public void Dado_um_novo_pedido_valido_ele_deve_gerar_um_numero_com_8_caracteres()
         {
+            var customer = new Customer("Vinicius Benicio", "vinicius.benicio@meta.com");
+            var order = new Order(customer, 0, null);
+
+            Assert.AreEqual(8, order.Number.Length);
+
             Assert.Fail();
         }
 
