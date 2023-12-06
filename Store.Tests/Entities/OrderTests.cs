@@ -8,23 +8,26 @@ namespace Store.Tests.Entities
     [TestClass]
     public class OrderTests
     {
+        private readonly Customer _customer = new Customer("Vinicius Benicio", "vinicius.benicio@meta.com");
+        private readonly Product _product = new Product("Produto 1", 10, true);
+        private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(5));
+
+
         [TestMethod]
         [TestCategory("Domain")]
         public void Dado_um_novo_pedido_valido_ele_deve_gerar_um_numero_com_8_caracteres()
         {
-            var customer = new Customer("Vinicius Benicio", "vinicius.benicio@meta.com");
-            var order = new Order(customer, 0, null);
+            var order = new Order(_customer, 0, null);
 
             Assert.AreEqual(8, order.Number.Length);
-
-            Assert.Fail();
         }
 
         [TestMethod]
         [TestCategory("Domain")]
         public void Dado_um_novo_pedido_seu_status_deve_ser_aguardando_pagamento()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 0, null);
+            Assert.AreEqual(order.Status, EOrderStatus.WaitingPayment);
         }
 
         [TestMethod]
@@ -39,6 +42,7 @@ namespace Store.Tests.Entities
         public void Dado_um_pedido_cancelado_seu_status_deve_ser_cancelado()
         {
             Assert.Fail();
+
         }
 
 
@@ -48,6 +52,7 @@ namespace Store.Tests.Entities
         public void Dado_um_novo_item_sem_produto_o_mesmo_nao_deve_ser_adicionado()
         {
             Assert.Fail();
+
         }
 
 
@@ -57,6 +62,7 @@ namespace Store.Tests.Entities
         public void Dado_um_novo_item_com_quantidade_zero_ou_menor_o_mesmo_nao_deve_ser_adicionado()
         {
             Assert.Fail();
+
         }
 
 
@@ -66,6 +72,7 @@ namespace Store.Tests.Entities
         public void Dado_um_novo_pedido_valido_seu_total_deve_ser_50()
         {
             Assert.Fail();
+
         }
 
 
@@ -75,6 +82,7 @@ namespace Store.Tests.Entities
         public void Dado_um_desconto_expirado_o_valor_do_pedido_deve_ser_60()
         {
             Assert.Fail();
+
         }
 
         [TestMethod]
@@ -82,6 +90,7 @@ namespace Store.Tests.Entities
         public void Dado_um_desconto_invalido_o_valor_do_pedido_deve_ser_60()
         {
             Assert.Fail();
+
         }
 
         [TestMethod]
@@ -89,6 +98,7 @@ namespace Store.Tests.Entities
         public void Dado_um_desconto_de_10_o_valor_do_pedido_deve_ser_50()
         {
             Assert.Fail();
+
         }
 
         [TestMethod]
@@ -96,6 +106,7 @@ namespace Store.Tests.Entities
         public void Dado_uma_taxa_de_entrega_de_10_o_valor_do_pedido_deve_ser_60()
         {
             Assert.Fail();
+
         }
 
         [TestMethod]
@@ -103,6 +114,7 @@ namespace Store.Tests.Entities
         public void Dado_um_pedido_sem_cliente_o_mesmo_deve_ser_invalido()
         {
             Assert.Fail();
+
         }
 
     }
