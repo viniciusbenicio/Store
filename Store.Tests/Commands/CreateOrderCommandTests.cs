@@ -13,8 +13,8 @@ namespace Store.Tests.Commands
             commmand.Customer = "";
             commmand.ZipCode = "134110800";
             commmand.PromoCode = "123455678";
-            commmand.Items.Add(new CreateOrdemItemCommand(Guid.NewGuid(), 1));
-            commmand.Items.Add(new CreateOrdemItemCommand(Guid.NewGuid(), 1));
+            commmand.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
+            commmand.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
             commmand.Validate();
 
             Assert.AreEqual(commmand.Valid, false);

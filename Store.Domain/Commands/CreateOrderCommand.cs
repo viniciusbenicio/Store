@@ -8,10 +8,10 @@ namespace Store.Domain.Commands
     {
         public CreateOrderCommand()
         {
-            Items = new List<CreateOrdemItemCommand>();
+            Items = new List<CreateOrderItemCommand>();
         }
 
-        public CreateOrderCommand(string customer, string zipCode, string promoCode, IList<CreateOrdemItemCommand> items)
+        public CreateOrderCommand(string customer, string zipCode, string promoCode, IList<CreateOrderItemCommand> items)
         {
             Customer = customer;
             ZipCode = zipCode;
@@ -22,7 +22,7 @@ namespace Store.Domain.Commands
         public string Customer { get; set; }
         public string ZipCode { get; set; }
         public string PromoCode { get; set; }
-        public IList<CreateOrdemItemCommand> Items { get; set; }
+        public IList<CreateOrderItemCommand> Items { get; set; }
 
         public void Validate()
         {

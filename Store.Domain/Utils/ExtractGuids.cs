@@ -4,7 +4,7 @@ namespace Store.Domain.Utils
 {
     public static class ExtractGuids
     {
-        public static IEnumerable<Guid> Extract(IList<CreateOrdemItemCommand> Items)
+        public static IEnumerable<Guid> Extract(IList<CreateOrderItemCommand> Items)
         {
             var guids = new List<Guid>();
 
