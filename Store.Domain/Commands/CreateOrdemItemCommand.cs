@@ -26,10 +26,5 @@ namespace Store.Domain.Commands
                                            .HasLen(Product.ToString(), 32, "Product", "Produto inválido")
                                            .IsGreaterThan(Quantity, 0, "Quantity", "Quantidade inválida"));
         }
-
-        public void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
